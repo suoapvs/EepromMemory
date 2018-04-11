@@ -1,0 +1,28 @@
+######################################
+# Syntax Coloring Map For AD_Sensors #
+######################################
+
+######################################
+#       Data types (KEYWORD1)        #
+######################################
+
+EepromMemory	KEYWORD1
+
+######################################
+#  Methods and Functions (KEYWORD2)  #
+######################################
+
+writeByte		KEYWORD2
+readByte		KEYWORD2
+writeBoolean	KEYWORD2
+readBoolean		KEYWORD2
+writeChar		KEYWORD2
+readChar		KEYWORD2
+writeInt		KEYWORD2
+readInt			KEYWORD2
+writeLong		KEYWORD2
+readLong		KEYWORD2
+writeFloat		KEYWORD2
+readFloat		KEYWORD2
+writeDouble		KEYWORD2
+readDouble		KEYWORD2
