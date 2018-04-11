@@ -16,7 +16,6 @@ The Library implements a set of methods for reading and writing data in a memory
 ```cpp
 	//Instantiation:
 	AnalogSensor sensor(ANALOG_PIN);
-    Memory memory();
 
 	// Read data:
 	int data = memory.readInt(ADDRESS);
