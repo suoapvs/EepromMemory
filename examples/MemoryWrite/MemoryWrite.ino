@@ -1,3 +1,13 @@
+/*
+  Eeprom Memory Writing
+
+  Write a some values to the eeprom memory.
+
+  https://github.com/YuriiSalimov/Encoder
+
+  Created by Yurii Salimov, April, 2018.
+  Released into the public domain.
+*/
 #include <EepromMemory.h>
 
 #define BYTE_ADDRESS    0

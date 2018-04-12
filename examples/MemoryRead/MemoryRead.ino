@@ -1,3 +1,14 @@
+/*
+  Eeprom Memory Reading
+
+  Read a some values from the eeprom memory 
+  and displays it in the default Serial.
+
+  https://github.com/YuriiSalimov/Encoder
+
+  Created by Yurii Salimov, April, 2018.
+  Released into the public domain.
+*/
 #include <EepromMemory.h>
 
 #define BYTE_ADDRESS    0
