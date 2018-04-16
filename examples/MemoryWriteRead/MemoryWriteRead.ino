@@ -1,16 +1,17 @@
 /*
   Eeprom Memory Writing / Reading
 
-  Write and Read a some values from the eeprom memory 
+  Write and Read a some values from the eeprom memory
   and displays it in the default Serial.
 
-  https://github.com/YuriiSalimov/Encoder
+  https://github.com/YuriiSalimov/EepromMemory
 
   Created by Yurii Salimov, April, 2018.
   Released into the public domain.
 */
 #include <EepromMemory.h>
 
+// Addresses of a values in the memory.
 #define BYTE_ADDRESS    0
 #define BOOLEAN_ADDRESS 1
 #define CHAR_ADDRESS    2
@@ -19,7 +20,9 @@
 #define FLOAT_ADDRESS   9
 #define DOUBLE_ADDRESS  13
 
+// the setup function runs once when you press reset or power the board
 void setup() {
+  // Values for writing
   const byte byteValueOut = 12;
   const boolean booleanValueOut = true;
   const char charValueOut = 'Y';
@@ -29,6 +32,7 @@ void setup() {
   const double doubleValueOut = 1313.323;
 
   const EepromMemory* memory = new EepromMemory();
+  // Writing values
   memory->writeByte(BYTE_ADDRESS, byteValueOut);
   memory->writeBoolean(BOOLEAN_ADDRESS, booleanValueOut);
   memory->writeChar(CHAR_ADDRESS, charValueOut);
@@ -37,6 +41,7 @@ void setup() {
   memory->writeFloat(FLOAT_ADDRESS, floatValueOut);
   memory->writeDouble(DOUBLE_ADDRESS, doubleValueOut);
 
+  // Reading values
   const byte byteValueIn = memory->readByte(BYTE_ADDRESS);
   const boolean booleanValueIn = memory->readBoolean(BOOLEAN_ADDRESS);
   const char charValueIn = memory->readChar(CHAR_ADDRESS);
@@ -46,6 +51,7 @@ void setup() {
   const double doubleValueIn = memory->readDouble(DOUBLE_ADDRESS);
 
   Serial.begin(9600);
+  // Displays results in the default Serial.
   Serial.println("Byte: " + String(byteValueOut) + " -> " + String(byteValueIn));
   Serial.println("Boolean: " + String(booleanValueOut) + " -> " + String(booleanValueIn));
   Serial.println("Char: " + String(charValueOut) + " -> " + String(charValueIn));
@@ -56,6 +62,6 @@ void setup() {
 }
 
 void loop() {
-
+  // not used
 }
 
