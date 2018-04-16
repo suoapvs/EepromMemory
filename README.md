@@ -2,7 +2,7 @@
 
 For Arduino boards.
 
-The Library implements a set of methods for reading and writing data in a memory. Provides an object-oriented interface for reading and writing data in a memory, using the EEPROM library.
+The Library implements a set of methods for reading and writing data in a memory. Provides an object-oriented interface for reading and writing data in a memory, using the "[EEPROM.h](https://www.arduino.cc/en/Reference/EEPROM)" "library.
 
 ## Installation
 
@@ -15,17 +15,27 @@ The Library implements a set of methods for reading and writing data in a memory
 
 ```cpp
 	//Instantiation:
-	AnalogSensor sensor(ANALOG_PIN);
+	Memory memory();
 
 	// Read data:
-	int data = memory.readInt(ADDRESS);
-	...
+	const byte byteValue = memory.readByte(BYTE_ADDRESS);
+	const boolean booleanValue = memory.readBoolean(BOOLEAN_ADDRESS);
+	const char charValue = memory.readChar(CHAR_ADDRESS);
+	const int intValue = memory.readInt(INT_ADDRESS);
+	const long longValue = memory.readLong(LONG_ADDRESS);
+	const float floatValue = memory.readFloat(FLOAT_ADDRESS);
+	const double doubleValue = memory.readDouble(DOUBLE_ADDRESS);
 
 	// Write data:
-	memory.writeInt(data, ADDRESS);
-	...
+	memory.writeByte(BYTE_ADDRESS, byteValueOut);
+	memory.writeBoolean(BOOLEAN_ADDRESS, booleanValueOut);
+	memory.writeChar(CHAR_ADDRESS, charValueOut);
+	memory.writeInt(INT_ADDRESS, intValueOut);
+	memory.writeLong(LONG_ADDRESS, longValueOut);
+	memory.writeFloat(FLOAT_ADDRESS, floatValueOut);
+	memory.writeDouble(DOUBLE_ADDRESS, doubleValueOut);
 
-    // ADDRESS - the data address in a memory.
+    // BYTE_ADDRESS, ..., DOUBLE_ADDRESS - the data addresses in a memory.
 ```
 
 Created by Yurii Salimov.
