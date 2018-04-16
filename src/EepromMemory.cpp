@@ -1,12 +1,19 @@
 #include "EepromMemory.h"
 
+// --- EEPROM methods ---
+int EepromMemory::length() {
+	return EEPROM.length();
+}
+
 void EepromMemory::writeByte(const int address, const byte data) {
-	EEPROM.write(address, data);
+	//EEPROM.write(address, data);
+	EEPROM.update(address, data);
 }
 
 byte EepromMemory::readByte(const int address) {
 	return EEPROM.read(address);
 }
+// --- --- --- --- --- ---
 
 void EepromMemory::writeBoolean(const int address, const boolean data) {
 	writeByte(address, data);
@@ -84,8 +91,4 @@ void EepromMemory::clear() {
 	for (int i = 0 ; i < length(); i++) {
 		writeByte(i, 0);
 	}
-}
-
-int EepromMemory::length() {
-	return EEPROM.length();
 }
