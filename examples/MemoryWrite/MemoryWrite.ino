@@ -3,13 +3,14 @@
 
   Write a some values to the eeprom memory.
 
-  https://github.com/YuriiSalimov/Encoder
+  https://github.com/YuriiSalimov/EepromMemory
 
   Created by Yurii Salimov, April, 2018.
   Released into the public domain.
 */
 #include <EepromMemory.h>
 
+// Addresses of a values in the memory.
 #define BYTE_ADDRESS    0
 #define BOOLEAN_ADDRESS 1
 #define CHAR_ADDRESS    2
@@ -18,7 +19,9 @@
 #define FLOAT_ADDRESS   9
 #define DOUBLE_ADDRESS  13
 
+// the setup function runs once when you press reset or power the board
 void setup() {
+  // Values for writing
   const byte byteValue = 12;
   const boolean booleanValue = true;
   const char charValue = 'Y';
@@ -28,6 +31,7 @@ void setup() {
   const double doubleValue = 1313.323;
 
   const EepromMemory* memory = new EepromMemory();
+  // Writing values
   memory->writeByte(BYTE_ADDRESS, byteValue);
   memory->writeBoolean(BOOLEAN_ADDRESS, booleanValue);
   memory->writeChar(CHAR_ADDRESS, charValue);
@@ -38,6 +42,6 @@ void setup() {
 }
 
 void loop() {
-
+  // not used
 }
 
