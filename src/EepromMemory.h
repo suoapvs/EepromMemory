@@ -15,7 +15,10 @@
 	where DATA - data for writing,
 	ADDRESS - DATA address in a memory.
 
+	https://github.com/YuriiSalimov/EepromMemory
+
 	Created by Yurii Salimov, April, 2018.
+	Released into the public domain.
 */
 
 #ifndef EEPROM_MEMORY_H
@@ -28,6 +31,11 @@
 #endif
 
 #include <EEPROM.h>
+
+#define EEPROM_INT_SIZE		2
+#define EEPROM_LONG_SIZE	4
+#define EEPROM_FLOAT_SIZE	4
+#define EEPROM_DOUBLE_SIZE	4
 
 class EepromMemory final {
 
@@ -60,14 +68,18 @@ class EepromMemory final {
 
 		double readDouble(const int address);
 
+		void clear();
+
+		int length();
+
 	private:
-		template <typename T> void write(
+		template <typename T> void writeData(
 			const int address,
 			const T data,
 			const int size
 		);
 
-		template <typename T> T read(
+		template <typename T> T readData(
 			const int address,
 			const T data,
 			const int size

@@ -25,38 +25,38 @@ char EepromMemory::readChar(const int address) {
 }
 
 void EepromMemory::writeInt(const int address, const int data) {
-	write(address, data, 2);
+	writeData(address, data, EEPROM_INT_SIZE);
 }
 
 int EepromMemory::readInt(const int address) {
-	return read(address, int(0), 4);
+	return readData(address, int(0), EEPROM_INT_SIZE);
 }
 
 void EepromMemory::writeLong(const int address, const long data) {
-	write(address, data, 4);
+	writeData(address, data, EEPROM_LONG_SIZE);
 }
 
 long EepromMemory::readLong(const int address) {
-	return read(address, long(0), 4);
+	return readData(address, long(0), EEPROM_LONG_SIZE);
 }
 
 void EepromMemory::writeFloat(const int address, const float data) {
-	write(address, data, 4);
+	writeData(address, data, EEPROM_FLOAT_SIZE);
 }
 
 float EepromMemory::readFloat(const int address) {
-	return read(address, float(0), 4);
+	return readData(address, float(0), EEPROM_FLOAT_SIZE);
 }
 
 void EepromMemory::writeDouble(const int address, const double data) {
-	write(address, data, 4);
+	writeData(address, data, EEPROM_DOUBLE_SIZE);
 }
 
 double EepromMemory::readDouble(const int address) {
-	return read(address, double(0), 4);
+	return readData(address, double(0), EEPROM_DOUBLE_SIZE);
 }
 
-template <typename T> void EepromMemory::write(
+template <typename T> void EepromMemory::writeData(
 	const int address,
 	const T data,
 	const int size
@@ -68,7 +68,7 @@ template <typename T> void EepromMemory::write(
 	}
 }
 
-template <typename T> T EepromMemory::read(
+template <typename T> T EepromMemory::readData(
 	const int address,
 	const T data,
 	const int size
@@ -78,4 +78,14 @@ template <typename T> T EepromMemory::read(
 		raw[i] = readByte(address + i);
 	}
 	return (T&) raw;
+}
+
+void EepromMemory::clear() {
+	for (int i = 0 ; i < length(); i++) {
+		writeByte(i, 0);
+	}
+}
+
+int EepromMemory::length() {
+	return EEPROM.length();
 }
