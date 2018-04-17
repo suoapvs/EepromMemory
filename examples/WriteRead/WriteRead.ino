@@ -28,8 +28,8 @@ void setup() {
   const char charValueOut = 'Y';
   const int intValueOut = 1313;
   const long longValueOut = 14010;
-  const float floatValueOut = 125.225;
-  const double doubleValueOut = 1313.323;
+  const float floatValueOut = 125.21;
+  const double doubleValueOut = 1313.32;
 
   const EepromMemory* memory = new EepromMemory();
   // Writing values
