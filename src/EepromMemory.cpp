@@ -5,6 +5,13 @@ int EepromMemory::length() {
 	return EEPROM.length();
 }
 
+/**
+	EEPROM.write():
+	Always write the data to the EEPROM at the address.
+	EEPROM.update(): 
+	The data is written only if differs from 
+	the one already saved at the same address.
+*/
 void EepromMemory::writeByte(const int address, const byte data) {
 	//EEPROM.write(address, data);
 	EEPROM.update(address, data);
