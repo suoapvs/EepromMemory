@@ -8,8 +8,8 @@ int EepromMemory::length() {
 /**
 	EEPROM.write():
 	Always write the data to the EEPROM at the address.
-	EEPROM.update(): 
-	The data is written only if differs from 
+	EEPROM.update():
+	The data is written only if differs from
 	the one already saved at the same address.
 */
 void EepromMemory::writeByte(const int address, const byte data) {

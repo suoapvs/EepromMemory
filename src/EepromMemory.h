@@ -1,6 +1,6 @@
 /**
-	EepromMemory.h - The Library implements a set of methods 
-	for reading and writing data in a memory, 
+	EepromMemory.h - The Library implements a set of methods
+	for reading and writing data in a memory,
 	using the EEPROM library.
 
 	Instantiation:
@@ -8,10 +8,10 @@
 
 	Read data:
 		int data = memory.readInt(ADDRESS);
-	
+
 	Write data:
 		memory.writeInt(DATA, ADDRESS);
-		
+
 	where DATA - data for writing,
 	ADDRESS - DATA address in a memory.
 
@@ -40,50 +40,42 @@
 class EepromMemory final {
 
 	public:
-		void writeByte(const int address, const byte data);
+		void writeByte(int address, byte data);
 
-		byte readByte(const int address);
+		byte readByte(int address);
 
-		void writeBoolean(const int address, const boolean data);
+		void writeBoolean(int address, boolean data);
 
-		boolean readBoolean(const int address);
+		boolean readBoolean(int address);
 
-		void writeChar(const int address, const char data);
+		void writeChar(int address, char data);
 
-		char readChar(const int address);
+		char readChar(int address);
 
-		void writeInt(const int address, const int data);
+		void writeInt(int address, int data);
 
-		int readInt(const int address);
+		int readInt(int address);
 
-		void writeLong(const int address, const long data);
+		void writeLong(int address, long data);
 
-		long readLong(const int address);
-		
-		void writeFloat(const int address, const float data);
+		long readLong(int address);
 
-		float readFloat(const int address);
+		void writeFloat(int address, float data);
 
-		void writeDouble(const int address, const double data);
+		float readFloat(int address);
 
-		double readDouble(const int address);
+		void writeDouble(int address, double data);
+
+		double readDouble(int address);
 
 		void clear();
 
 		int length();
 
 	private:
-		template <typename T> void writeData(
-			const int address,
-			const T data,
-			const int size
-		);
+		template <typename T> void writeData(int address, T data, int size);
 
-		template <typename T> T readData(
-			const int address,
-			const T data,
-			const int size
-		);
+		template <typename T> T readData(int address, T data, int size);
 };
 
 #endif
