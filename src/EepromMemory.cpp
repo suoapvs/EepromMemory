@@ -95,8 +95,7 @@ template <typename T> T EepromMemory::readData(
 }
 
 void EepromMemory::clear() {
-	const int memoryLength = length();
-	for (int i = 0 ; i < memoryLength; i++) {
+	for (int i = 0 ; i < length(); i++) {
 		writeByte(i, 0);
 	}
 }
