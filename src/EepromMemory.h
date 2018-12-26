@@ -32,10 +32,10 @@
 
 #include <EEPROM.h>
 
-#define EEPROM_INT_SIZE		2
-#define EEPROM_LONG_SIZE	4
-#define EEPROM_FLOAT_SIZE	4
-#define EEPROM_DOUBLE_SIZE	4
+#define EEPROM_INT_SIZE 2
+#define EEPROM_LONG_SIZE 4
+#define EEPROM_FLOAT_SIZE 4
+#define EEPROM_DOUBLE_SIZE 4
 
 class EepromMemory final {
 
