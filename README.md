@@ -38,4 +38,6 @@ The Library implements a set of methods for reading and writing data in a memory
     // BYTE_ADDRESS, ..., DOUBLE_ADDRESS - the data addresses in a memory.
 ```
 
+See [examples](/examples)...
+
 Created by Yurii Salimov.
