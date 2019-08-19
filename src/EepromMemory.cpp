@@ -77,7 +77,7 @@ template <typename T> void EepromMemory::writeData(
 ) {
 	byte raw[size];
 	(T&) raw = data;
-	for(byte i = 0; i < size; i++) {
+	for(byte i = 0; i < size; ++i) {
 		writeByte(address + i, raw[i]);
 	}
 }
@@ -88,14 +88,14 @@ template <typename T> T EepromMemory::readData(
 	const int size
 ) {
 	byte raw[size];
-	for(byte i = 0; i < size; i++) {
+	for(byte i = 0; i < size; ++i) {
 		raw[i] = readByte(address + i);
 	}
 	return (T&) raw;
 }
 
 void EepromMemory::clear() {
-	for (int i = 0 ; i < length(); i++) {
+	for (int i = 0 ; i < length(); ++i) {
 		writeByte(i, 0);
 	}
 }
