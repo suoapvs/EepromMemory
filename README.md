@@ -15,25 +15,25 @@ The Library implements a set of methods for reading and writing data in a memory
 
 ```cpp
 	//Instantiation:
-	Memory memory();
+	EepromMemory* memory = new EepromMemory();
 
 	// Read data:
-	const byte byteValue = memory.readByte(BYTE_ADDRESS);
-	const boolean booleanValue = memory.readBoolean(BOOLEAN_ADDRESS);
-	const char charValue = memory.readChar(CHAR_ADDRESS);
-	const int intValue = memory.readInt(INT_ADDRESS);
-	const long longValue = memory.readLong(LONG_ADDRESS);
-	const float floatValue = memory.readFloat(FLOAT_ADDRESS);
-	const double doubleValue = memory.readDouble(DOUBLE_ADDRESS);
+	const byte byteValue = memory->readByte(BYTE_ADDRESS);
+	const boolean booleanValue = memory->readBoolean(BOOLEAN_ADDRESS);
+	const char charValue = memory->readChar(CHAR_ADDRESS);
+	const int intValue = memory->readInt(INT_ADDRESS);
+	const long longValue = memory->readLong(LONG_ADDRESS);
+	const float floatValue = memory->readFloat(FLOAT_ADDRESS);
+	const double doubleValue = memory->readDouble(DOUBLE_ADDRESS);
 
 	// Write data:
-	memory.writeByte(BYTE_ADDRESS, byteValueOut);
-	memory.writeBoolean(BOOLEAN_ADDRESS, booleanValueOut);
-	memory.writeChar(CHAR_ADDRESS, charValueOut);
-	memory.writeInt(INT_ADDRESS, intValueOut);
-	memory.writeLong(LONG_ADDRESS, longValueOut);
-	memory.writeFloat(FLOAT_ADDRESS, floatValueOut);
-	memory.writeDouble(DOUBLE_ADDRESS, doubleValueOut);
+	memory->writeByte(BYTE_ADDRESS, byteValueOut);
+	memory->writeBoolean(BOOLEAN_ADDRESS, booleanValueOut);
+	memory->writeChar(CHAR_ADDRESS, charValueOut);
+	memory->writeInt(INT_ADDRESS, intValueOut);
+	memory->writeLong(LONG_ADDRESS, longValueOut);
+	memory->writeFloat(FLOAT_ADDRESS, floatValueOut);
+	memory->writeDouble(DOUBLE_ADDRESS, doubleValueOut);
 
     // BYTE_ADDRESS, ..., DOUBLE_ADDRESS - the data addresses in a memory.
 ```
