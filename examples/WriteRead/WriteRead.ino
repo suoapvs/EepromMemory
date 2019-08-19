@@ -33,7 +33,7 @@ void setup() {
   const float floatValueOut = 125.21;
   const double doubleValueOut = 1313.32;
 
-  const EepromMemory* memory = new EepromMemory();
+  EepromMemory* memory = new EepromMemory();
   // Writing values
   memory->writeByte(BYTE_ADDRESS, byteValueOut);
   memory->writeBoolean(BOOLEAN_ADDRESS, booleanValueOut);
