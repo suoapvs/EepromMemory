@@ -22,6 +22,8 @@
 
 // the setup function runs once when you press reset or power the board
 void setup() {
+  Serial.begin(9600);
+
   // Values for writing
   const byte byteValueOut = 12;
   const boolean booleanValueOut = true;
@@ -50,7 +52,6 @@ void setup() {
   const float floatValueIn = memory->readFloat(FLOAT_ADDRESS);
   const double doubleValueIn = memory->readDouble(DOUBLE_ADDRESS);
 
-  Serial.begin(9600);
   // Displays results in the default Serial.
   Serial.println("Byte: " + String(byteValueOut) + " -> " + String(byteValueIn));
   Serial.println("Boolean: " + String(booleanValueOut) + " -> " + String(booleanValueIn));
@@ -64,4 +65,3 @@ void setup() {
 void loop() {
   // not used
 }
-
