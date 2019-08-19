@@ -20,7 +20,6 @@ void EepromMemory::writeByte(const int address, const byte data) {
 byte EepromMemory::readByte(const int address) {
 	return EEPROM.read(address);
 }
-// --- --- --- --- --- ---
 
 void EepromMemory::writeBoolean(const int address, const boolean data) {
 	writeByte(address, data);
@@ -73,7 +72,7 @@ double EepromMemory::readDouble(const int address) {
 template <typename T> void EepromMemory::writeData(
 	const int address,
 	const T data,
-	const int size
+	const byte size
 ) {
 	byte raw[size];
 	(T&) raw = data;
@@ -85,7 +84,7 @@ template <typename T> void EepromMemory::writeData(
 template <typename T> T EepromMemory::readData(
 	const int address,
 	const T data,
-	const int size
+	const byte size
 ) {
 	byte raw[size];
 	for(byte i = 0; i < size; ++i) {

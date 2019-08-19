@@ -4,16 +4,19 @@
 	using the EEPROM library.
 
 	Instantiation:
-		Memory memory();
+		EepromMemory* memory = new EepromMemory();
 
 	Read data:
-		int data = memory.readInt(ADDRESS);
+		int data = memory->readInt(ADDRESS);
 
 	Write data:
-		memory.writeInt(DATA, ADDRESS);
+		memory->writeInt(DATA, ADDRESS);
 
 	where DATA - data for writing,
 	ADDRESS - DATA address in a memory.
+
+	v.0.9.2
+	- optimized writeData(*) and readData(*) methods
 
 	https://github.com/YuriiSalimov/EepromMemory
 
@@ -73,9 +76,9 @@ class EepromMemory final {
 		int length();
 
 	private:
-		template <typename T> void writeData(int address, T data, int size);
+		template <typename T> void writeData(int address, T data, byte size);
 
-		template <typename T> T readData(int address, T data, int size);
+		template <typename T> T readData(int address, T data, byte size);
 };
 
 #endif
