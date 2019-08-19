@@ -1,5 +1,5 @@
 /**
-	EepromMemory.h - The Library implements a set of methods
+	EepromMemory - class implements a set of methods
 	for reading and writing data in a memory,
 	using the EEPROM library.
 

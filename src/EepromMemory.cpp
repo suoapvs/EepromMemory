@@ -1,6 +1,5 @@
 #include "EepromMemory.h"
 
-// --- EEPROM methods ---
 int EepromMemory::length() {
 	return EEPROM.length();
 }
